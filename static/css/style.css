@@ -75,7 +75,7 @@ body{
 
 .landing-body{
 
-    background:url("../images/bg.jpg") center center/cover no-repeat;
+    background:url("../images/bg.png") center center/cover no-repeat;
 
     min-height:100vh;
 }
@@ -813,7 +813,7 @@ footer{
 
     align-items:center;
 
-    background-image:url("/static/images/banner.jpg");
+    background-image:url("/static/images/banner.png");
 
     background-size:cover;
 
