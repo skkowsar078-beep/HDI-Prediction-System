@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HDI Prediction</title>
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard">
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+
+<h2>🌍 HDI System</h2>
+
+
+<a href="/dashboard">🏠 Dashboard</a>
+
+<a href="/predict">📊 Predict</a>
+
+<a href="/history">📜 History</a>
+
+<a href="/about">ℹ About</a>
+
+<a href="/logout">🚪 Logout</a>
+
+
+</aside>
+
+
+
+
+
+<!-- MAIN CONTENT -->
+
+<main class="content">
+
+
+<div class="predict-box">
+
+
+
+<h1>🌍 HDI Prediction</h1>
+
+
+<p>
+Enter development indicators to predict Human Development Level.
+</p>
+
+
+
+
+
+{% if error %}
+
+<div class="error-box">
+
+{{error}}
+
+</div>
+
+{% endif %}
+
+
+
+
+
+<form method="POST">
+
+
+
+
+
+<label>
+🏥 Life Expectancy
+</label>
+
+
+<input
+
+type="number"
+
+step="0.01"
+
+name="life"
+
+placeholder="Example: 82"
+
+required>
+
+
+
+
+
+
+
+
+<label>
+🎓 Expected Years of Schooling
+</label>
+
+
+<input
+
+type="number"
+
+step="0.01"
+
+name="expected"
+
+placeholder="Example: 18"
+
+required>
+
+
+
+
+
+
+
+
+<label>
+🎓 Mean Years of Schooling
+</label>
+
+
+<input
+
+type="number"
+
+step="0.01"
+
+name="mean"
+
+placeholder="Example: 14"
+
+required>
+
+
+
+
+
+
+
+
+<label>
+💰 GNI Per Capita ($)
+</label>
+
+
+<div class="currency-input">
+
+
+<span>$</span>
+
+
+<input
+
+type="number"
+
+step="0.01"
+
+name="gni"
+
+placeholder="Example: 60000"
+
+required>
+
+
+</div>
+
+
+
+<small>
+Enter annual GNI per capita in US Dollars
+</small>
+
+
+
+
+
+
+
+<button 
+type="submit"
+class="predict-btn">
+
+
+Predict HDI
+
+
+</button>
+
+
+
+
+
+</form>
+
+
+
+
+
+
+
+
+{% if category %}
+
+
+
+<div class="result-card">
+
+
+<h2>
+🌍 Prediction Result
+</h2>
+
+
+
+
+
+{% if category == "Very High" %}
+
+
+<h1 class="badge very-high">
+
+🟢 Very High Human Development
+
+</h1>
+
+
+<p>
+
+Excellent health, education and income levels.
+
+</p>
+
+
+
+
+
+
+{% elif category == "High" %}
+
+
+<h1 class="badge high">
+
+🔵 High Human Development
+
+</h1>
+
+
+<p>
+
+Good development with strong living standards.
+
+</p>
+
+
+
+
+
+
+{% elif category == "Medium" %}
+
+
+<h1 class="badge medium">
+
+🟡 Medium Human Development
+
+</h1>
+
+
+<p>
+
+Moderate development level. Improvement is possible.
+
+</p>
+
+
+
+
+
+
+{% elif category == "Low" %}
+
+
+<h1 class="badge low">
+
+🔴 Low Human Development
+
+</h1>
+
+
+<p>
+
+Needs improvement in health, education and income.
+
+</p>
+
+
+
+{% endif %}
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+HDI Factors Used
+</h3>
+
+
+
+<ul>
+
+
+<li>🏥 Life Expectancy</li>
+
+<li>🎓 Expected Years of Schooling</li>
+
+<li>🎓 Mean Years of Schooling</li>
+
+<li>💰 GNI Per Capita</li>
+
+
+</ul>
+
+
+
+
+
+
+</div>
+
+
+
+{% endif %}
+
+
+
+
+
+
+
+
+</div>
+
+
+
+</main>
+
+
+
+</div>
+
+
+
+</body>
+
+
+</html>

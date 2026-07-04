@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<title>HDI Result</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard">
+
+
+<aside class="sidebar">
+
+<h2>🌍 HDI System</h2>
+
+<a href="/dashboard">🏠 Dashboard</a>
+
+<a href="/predict">📊 Predict</a>
+
+<a href="/history">📜 History</a>
+
+<a href="/about">ℹ About</a>
+
+<a href="/logout">🚪 Logout</a>
+
+
+</aside>
+
+
+
+<main class="content">
+
+
+
+<div class="result-card">
+
+
+<h1>🌍 HDI Prediction Result</h1>
+
+
+
+{% if category == "Very High" %}
+
+<h2 class="badge very-high">
+
+🟢 Very High Human Development
+
+</h2>
+
+
+<p>
+
+The country has a very high level of human development.
+It shows strong performance in life expectancy,
+education and GNI per capita.
+
+</p>
+
+
+
+{% elif category == "High" %}
+
+<h2 class="badge high">
+
+🔵 High Human Development
+
+</h2>
+
+
+<p>
+
+The country has good development indicators.
+Further improvements in health, education and income
+can increase human development.
+
+</p>
+
+
+
+{% elif category == "Medium" %}
+
+
+<h2 class="badge medium">
+
+🟡 Medium Human Development
+
+</h2>
+
+
+<p>
+
+The country has moderate development levels.
+Improvements in healthcare, education and income
+can reduce development gaps.
+
+</p>
+
+
+
+
+{% elif category == "Low" %}
+
+
+<h2 class="badge low">
+
+🔴 Low Human Development
+
+</h2>
+
+
+<p>
+
+The country requires development support due to
+lower health, education and income indicators.
+
+</p>
+
+
+{% endif %}
+
+
+
+<hr>
+
+
+<h3>Input Values</h3>
+
+
+<table class="result-table">
+
+
+<tr>
+
+<td>Life Expectancy</td>
+
+<td>{{life}}</td>
+
+</tr>
+
+
+<tr>
+
+<td>Expected Schooling</td>
+
+<td>{{expected}}</td>
+
+</tr>
+
+
+<tr>
+
+<td>Mean Schooling</td>
+
+<td>{{mean}}</td>
+
+</tr>
+
+
+<tr>
+
+<td>GNI Per Capita</td>
+
+<td>{{gni}}</td>
+
+</tr>
+
+
+</table>
+
+
+
+<br>
+
+
+<a href="/predict">
+
+<button class="predict-btn">
+
+Predict Again
+
+</button>
+
+</a>
+
+
+
+</div>
+
+
+
+</main>
+
+
+</div>
+
+
+</body>
+
+</html>

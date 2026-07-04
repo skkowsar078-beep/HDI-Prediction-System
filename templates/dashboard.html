@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+
+        <h2>🌍 HDI System</h2>
+
+        <a href="/dashboard"><i class="fas fa-home"></i> Dashboard</a>
+
+        <a href="/predict"><i class="fas fa-chart-line"></i> Predict</a>
+
+        <a href="/history"><i class="fas fa-history"></i> History</a>
+
+        <a href="/about"><i class="fas fa-circle-info"></i> About</a>
+
+        <a href="/logout"><i class="fas fa-right-from-bracket"></i> Logout</a>
+
+    </aside>
+
+    <main class="content">
+
+        <h1>HDI Prediction Dashboard</h1>
+
+        <p class="welcome">
+            Welcome to the Human Development Index Prediction System.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <i class="fas fa-globe"></i>
+
+                <h2>{{ countries }}</h2>
+
+                <p>Countries</p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fas fa-bullseye"></i>
+
+                <h2>{{ accuracy }}</h2>
+
+                <p>Model Accuracy</p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fas fa-layer-group"></i>
+
+                <h2>4</h2>
+
+                <p>HDI Categories</p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fas fa-clock-rotate-left"></i>
+
+                <h2>{{ total_predictions }}</h2>
+
+                <p>Total Predictions</p>
+
+            </div>
+
+        </div>
+
+        <div class="quick-actions">
+
+            <a href="/predict" class="action-btn">
+                <i class="fas fa-chart-line"></i><br><br>
+                Predict HDI
+            </a>
+
+            <a href="/history" class="action-btn">
+                <i class="fas fa-file-lines"></i><br><br>
+                View History
+            </a>
+
+            <a href="/about" class="action-btn">
+                <i class="fas fa-circle-info"></i><br><br>
+                About Project
+            </a>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+
+</html>

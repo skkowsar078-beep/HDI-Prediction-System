@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prediction History</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+
+        <h2>🌍 HDI System</h2>
+
+        <a href="/dashboard">🏠 Dashboard</a>
+        <a href="/predict">📊 Predict</a>
+        <a href="/history">📜 History</a>
+        <a href="/about">ℹ About</a>
+        <a href="/logout">🚪 Logout</a>
+
+    </aside>
+
+    <main class="content">
+
+        <div class="history-card">
+
+            <h1>Prediction History</h1>
+
+            {% if records %}
+
+            <table class="history-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Date</th>
+                        <th>Life Expectancy</th>
+                        <th>Expected Schooling</th>
+                        <th>Mean Schooling</th>
+                        <th>GNI Per Capita</th>
+                        <th>Prediction</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                {% for row in records %}
+
+                <tr>
+
+                    <td>{{ row["Date"] }}</td>
+                    <td>{{ row["Life Expectancy"] }}</td>
+                    <td>{{ row["Expected Schooling"] }}</td>
+                    <td>{{ row["Mean Schooling"] }}</td>
+                    <td>{{ row["GNI Per Capita"] }}</td>
+                    <td>{{ row["Prediction"] }}</td>
+
+                </tr>
+
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+
+            {% else %}
+
+            <h2>No prediction history available.</h2>
+
+            {% endif %}
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+
+</html>

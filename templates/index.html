@@ -1,1 +1,101 @@
-<!--templates folder created-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HDI Prediction System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="landing-body">
+
+    <div class="overlay">
+
+        <nav class="navbar">
+
+            <div class="logo">
+                🌍 <span>HDI Prediction System</span>
+            </div>
+
+            <div class="menu">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/login" class="login-btn">Login</a>
+            </div>
+
+        </nav>
+
+
+        <section class="hero">
+
+            <h1>Human Development Index Prediction</h1>
+
+            <p>
+                Predict a country's Human Development Index category
+                using Machine Learning and socioeconomic indicators.
+            </p>
+
+            <a href="/login">
+                <button class="hero-btn">
+                    Get Started →
+                </button>
+            </a>
+
+        </section>
+
+
+        <section class="features">
+
+            <div class="card">
+
+                <h2>🌎 208 Countries</h2>
+
+                <p>
+                    Trained using official UNDP Human Development
+                    Report data.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h2>🤖 Machine Learning</h2>
+
+                <p>
+                    Random Forest Classifier predicts HDI categories
+                    with high accuracy.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h2>📈 90.47% Accuracy</h2>
+
+                <p>
+                    Uses Life Expectancy, Schooling and
+                    GNI per Capita as prediction features.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+
+            © 2026 HDI Prediction System |
+            Developed by Kowsar
+
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
